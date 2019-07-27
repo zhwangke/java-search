@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="./img/style.css">
+    <link rel="stylesheet" href="./img/swiper.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="./css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="./css/icon.css">
+    <link rel="stylesheet" type="text/css" href="./css/demo.css">
+</head>
+<body>
+<!-- 顶部搜索	 - start -->
+<div class="header">
+	<div class="head">
+		<div class="logo"><a href="#"><img src="./img/logo.png" width="100%" alt=""></a></div>
+		<form action="/list.html" class="formBox" method="get">
+			<input type="text" class="inputSeach" id="inputSeach" name="keywords">
+			<input type="submit" value="搜索一下" class="inputSub">
+			<div class="recommend">
+				<div class="item">美团</div>
+				<div class="item">百度外卖</div>	
+				<div class="item">美团</div>
+				<div class="item">百度外卖</div>	
+			</div>
+		</form>
+	</div>
+</div>
+<div class="itemList"></div>
+<div class="pageList"></div>
+<!-- 顶部搜索	 - end -->
+
+<div class="contentBox">
+	<!-- 中间左边区域 - start -->
+    <div class="contener_l">
+        <div class="count">
+            <div class="showTool">
+                <div class="toolBox">搜索引擎为您找到相关结果约17,800,000个 <span class="tool">搜索工具</span></div>
+                <div class="toolBox">
+
+                    从:<input class="easyui-datetimebox" style = "height: 25px ; width: 100px" name="dateStart" />
+                    至:<input class="easyui-datetimebox" style = "height: 25px ; width: 100px" name="dateEnd"/>
+                    <input type="button" onclick="" value="确定">
+
+                    <input  name="editor" placeholder="请输入编辑" onkeypress = "" style = "height: 15px ; width: 100px"/>
+                    <input  name="source" placeholder="请输入来源" onkeypress = "" style = "height: 15px ; width: 100px"/>
+                    <span class="tool openTool">收起工具</span>
+                </div>
+
+            </div>
+        </div>
+		<div class="advItem">
+			<div class="item">
+				<div class="title"><img src="./img/logo.png" width="30px" height="30px" class="logo" alt=""><a href="#"></a>北京传智播客教育科技股份有限公司 <span>官网</span></div>
+				<div class="contentInfo_src">
+					<a href="#"><img src="./img/item.jpeg" alt="" class="imgSrc" width="121px" height="75px"></a>
+					<div class="infoBox">
+						<p class="describe">
+							大数据学习已然成为时代所趋，相较于目前市面上的书籍及学习视频，大数据培训更适用于对大数据感兴趣的人群，通过培训老师丰富的大数据实战经验分享， 能在大数据初期学习中，少走很多弯路，后期的项目实战，结合企业及时下大数据热门应用，可快速接轨大数据发展方向。
+						</p>
+						<p><a class="showurl" href="www.itcast.cn">www.itcast.cn 2018-08</a> <span class="lab"><a href="">传智快照 - </a><a href="">品牌广告</a></span></p>
+					</div>
+				</div>
+				<div class="advTable">
+					<div class="lab"><div class="on">传智播客</div><div>传智播客</div><div>传智播客</div><div>传智播客</div><div>传智播客</div><div>传智播客</div></div>
+					<div class="cont">
+						<div class="items">
+							<img src="./img/item.jpeg" alt="">
+							<div class="itemsInfo">
+								<div class="tit">北京传智播客教育科技股份有限公司一</div>
+								<ul>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+							<div class="listTit">
+							<a href=""><div>传智播客</div><div>传智播客</div><div>传智播客</div><div>传智播客</div></a>
+							</div>
+						</div>
+						<div class="items">
+							
+							<img src="./img/item.jpeg" alt="">
+							<div class="itemsInfo">
+								<div class="tit">北京传智播客教育科技股份有限公司二</div>
+								<ul>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+							<div class="listTit">
+							<a href=""><div>传智播客</div><div>传智播客</div><div>传智播客</div><div>传智播客</div></a>
+							</div>
+						</div>
+						<div class="items">
+							
+							<img src="./img/item.jpeg" alt="">
+							<div class="itemsInfo">
+								<div class="tit">北京传智播客教育科技股份有限公司三</div>
+								<ul>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+							<div class="listTit">
+							<a href=""><div>传智播客</div><div>传智播客</div><div>传智播客</div><div>传智播客</div></a>
+							</div>
+						</div>
+						<div class="items">
+							
+							<img src="./img/item.jpeg" alt="">
+							<div class="itemsInfo">
+								<div class="tit">北京传智播客教育科技股份有限公司四</div>
+								<ul>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+							<div class="listTit">
+							<a href=""><div>传智播客</div><div>传智播客</div><div>传智播客</div><div>传智播客</div></a>
+							</div>
+						</div>
+						<div class="items">
+							
+							<img src="./img/item.jpeg" alt="">
+							<div class="itemsInfo">
+								<div class="tit">北京传智播客教育科技股份有限公司五</div>
+								<ul>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+							<div class="listTit">
+							<a href=""><div>传智播客</div><div>传智播客</div><div>传智播客</div><div>传智播客</div></a>
+							</div>
+						</div>
+						<div class="items">
+							
+							<img src="./img/item.jpeg" alt="">
+							<div class="itemsInfo">
+								<div class="tit">北京传智播客教育科技股份有限公司六</div>
+								<ul>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+									<li><a href="#">传智播客</a></li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+							<div class="listTit">
+							<a href=""><div>传智播客</div><div>传智播客</div><div>传智播客</div><div>传智播客</div></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<div class="relevant">
+		<div class="title">
+			相关搜索
+		</div>
+		<div>
+			<a href="#">仪表传智播客器</a>
+			<a href="#">传智播客</a>
+			<a href="#">asp是什么语言</a>  
+			<a href="#">上海雷迅am2-40价格</a>	
+			<a href="#">上海雷迅销售电话</a>
+			<a href="#">上海雷迅传智播客ak-mg</a>
+			<a href="#">aspl</a>
+			<a href="#">pdm箱</a>
+			<a href="#">pdm配电单元</a>
+		</div>
+	</div>
+
+
+	<!-- 中间左边区域 - end -->
+
+	<!-- 中间右边区域 - start -->
+
+	<div class="contener_r">
+		<div class="advert">
+			<div class="title">国科简提供区块链系统</div>	
+			<div class="ban_swiper">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="./img/adv1.jpeg" alt=""></div>
+						<div class="swiper-slide"><img src="./img/adv2.jpeg" alt=""></div>
+						<div class="swiper-slide"><img src="./img/adv1.jpeg" alt=""></div>
+						<div class="swiper-slide"><img src="./img/adv2.jpeg" alt=""></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div> 			
+			</div>
+			<div class="des">
+				星域云 开创了全球领先的共享计算生态,以共享模式和区块链技术收集海量计算资源,将百万节点资源整合,开放给广大互联网企业,实现更高性价比,更易扩展,更环保的计算方式.
+			</div>
+			<div class="showUrl"><a href="#">国科简（北京）科技有限公司</a> <span>品牌广告</span></div>
+		</div>	
+
+		<div class="hotSeach">
+			<div class="title">搜索热点  
+			<div class="pageListes">
+				<a href=""> < </a>
+				<a href="" class="on"> <span></span></a>
+				<a href=""> <span></span></a>
+				<a href=""> <span></span></a>
+				<a href="" class="go"> ></a></div>
+			</div>
+			<div class="seachItem">
+				<div class="topLab">排名 <span>搜索指数</span></div>
+				<li class="A"><a href=""><span>1</span>新闻联播 下等人 <span>1345<em></em></span></a></li>
+				<li class="B"><a href=""><span>2</span>新闻联播 下等人 <span>1345<em></em></span></a></li>
+				<li class="C"><a href=""><span>3</span>新闻联播 下等人 <span>1345<em></em></span></a></li>
+				<li><a href=""><span>4</span>新闻联播 下等人 <span>1345<em></em></span></a></li>
+				<li><a href=""><span>5</span>新闻联播 下等人 <span>1345<em></em></span></a></li>
+				<li><a href=""><span>6</span>新闻联播 下等人 <span>1345<em class="add"></em></span></a></li>
+				<li><a href=""><span>7</span>新闻联播 下等人 <span>1345<em></em></span></a></li>
+				<li><a href=""><span>8</span>新闻联播 下等人 <span>1345<em></em></span></a></li>
+				<li><a href=""><span>9</span>新闻联播 下等人 <span>1345<em class="add"></em></span></a></li>
+				<li><a href=""><span>10</span>新闻联播 下等人 <span>1345<em></em></span></a></li>
+				<div class="source"> 数据来源 百度数据库</div>
+			</div>	
+		</div>
+	</div>	
+
+	<!-- 中间右边区域 - end -->
+	
+</div>
+</div>
+<script src="./img/swiper.min.js"></script>
+<script src="./img/jquery.min.js"></script>
+<script src="./img/jquery.easyui.min.js"></script>
+<script>
+	
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      autoplay: true
+    });
+    var swiper = new Swiper('.swiper-hot-container', {
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      autoplay: true
+    });
+
+    $('.tool').click(function(){
+    	if($('.showTool').hasClass('act')){
+    		$('.showTool').removeClass('act')
+    	}else{
+    		$('.showTool').addClass('act')
+    	}
+    })
+  
+  	$('.inputSeach').focus(function(){
+  		$('.recommend').css({display:'block'})
+  	})
+  	$('.inputSeach').blur(function(){
+  		setTimeout(function(){
+			$('.recommend').css({display:'none'})
+  		},100)
+  	})
+  	$('.recommend .item').click(function(){
+  		$('.inputSeach').val($(this).text())
+  		$('.recommend').css({display:'none'})
+  	})
+ 
+    var tabInd = 0;
+    var time = ''
+
+  	$('.advTable .lab div').hover(function(){
+  		clearInterval(time)
+  		tabInd = $(this).index();
+		tabSwitch(tabInd)
+  	},function(){
+		time = setInterval(automaticSwitch,3000)
+  	})
+    
+    function tabSwitch(obj){
+		$('.advTable .lab div').eq(obj).addClass('on').siblings().removeClass('on')
+  		tabInd = obj
+  		$('.advTable .cont .items').eq(tabInd).show().siblings().hide()
+    }
+	function automaticSwitch(){
+    	tabInd++
+    	if(tabInd >= $('.advTable .lab div').length){
+    		tabInd = 0;
+    	}
+    	tabSwitch(tabInd)
+    }
+
+    time = setInterval(automaticSwitch,3000)
+
+
+
+</script>
+<script>
+
+    //1. 页面加载完成后, 获取url上关键词数据 :  js : BOM(浏览器对象)  DOM(文档对象)  SCMAScript(基本语法)
+    // ?keywords=刘德华
+    var parmas = location.search;
+
+    //2. 切割请求参数, 获取=后面的值
+    var keywords = parmas.split("=")[1]; // 如果是中文, 会进行url编码
+
+    //3. url的解码操作
+    keywords = decodeURI(keywords)
+
+    //4. 回显到页面中
+    $("#inputSeach").val(keywords)
+
+    //5. 发送异步请求
+    ajaxQuery(1,12);
+
+
+    // 执行异步请求的方法
+    function ajaxQuery(page,pageSize) {
+        //5.1 从文本框中获取用户输入的关键词
+        var keywords = $("#inputSeach").val();
+
+        var url = "/s.action"
+        var param = {"keywords": keywords,"pageBean.page":page,"pageBean.pageSize":pageSize};
+        //5.2 发送异步请求
+        $.post(url, param, function (data) { // data:  resultBean对象
+
+            //5.2.1: 获取返回的数据中状态信息: 如果为false. 给用户提示错误信息, 并跳转到首页
+            var flag = data.flag;
+            if (!flag) {
+                // 如果为false, 表示, 请求失败了
+                alert(data.error)
+                location.href = "/index.html"
+                return;
+            }
+
+            //5.2.2: 获取 newsList的数据
+            var newsList = data.pageBean.newsList;
+
+            //5.2.3 : 遍历newsList, 拼接数据的div列表
+            var divStr = ""
+            $(newsList).each(function () {
+                // this 表示的当前遍历对象: news对象
+                /*
+                 <div class="item">
+                        <div class="title"><a href="#">北京传智播客教育科技股份有限公司</a></div>
+                        <div class="contentInfo_src">
+                            <a href="#"><img src="./img/item.jpeg" alt="" class="imgSrc" width="121px" height="75px"></a>
+                            <div class="infoBox">
+                                <p class="describe">
+                                    大数据学习已然成为时代所趋，相较于目前市面上的书籍及学习视频，大数据培训更适用于对大数据感兴趣的人群，通过培训老师丰富的大数据实战经验分享，
+                                    能在大数据初期学习中，少走很多弯路，后期的项目实战，结合企业及时下大数据热门应用，可快速接轨大数据发展方向。
+                                </p>
+                                <p><a class="showurl" href="www.itcast.cn">www.itcast.cn 2018-08</a> <span class="lab">隔壁老王 - 网易新闻</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                 */
+                var docurl = this.docurl;
+                docurl = docurl.substring(0,11)+"..."
+                divStr+= "<div class=\"item\">\n" +
+                    "                        <div class=\"title\"><a href=\""+this.docurl+"\">"+this.title+"</a></div>\n" +
+                    "                        <div class=\"contentInfo_src\">\n" +
+                    "                            <a href=\"#\"><img src=\"./img/item.jpeg\" alt=\"\" class=\"imgSrc\" width=\"121px\" height=\"75px\"></a>\n" +
+                    "                            <div class=\"infoBox\">\n" +
+                    "                                <p class=\"describe\">\n" +
+                    "                                   "+this.content+" \n" +
+                    "                                    \n" +
+                    "                                </p>\n" +
+                    "                                <p><a class=\"showurl\" href=\""+this.docurl+"\">"+docurl+" "+this.time+"</a> <span class=\"lab\">"+this.editor+" - "+this.source+"</span>\n" +
+                    "                                </p>\n" +
+                    "                            </div>\n" +
+                    "                        </div>\n" +
+                    "                    </div>";
+
+            });
+
+            // 循环接收后: 将divStr设置到页面中
+            //5.2.4:  将拼接好的新闻列表页的html  写入到页面中
+            $(".itemList").html(divStr)
+
+            // ------------------------以下内容为分页条的处理----------------------------------
+            /*
+            <ul>
+                <li><a href="#">< 上一页</a></li>
+                <li>1</li>
+                <li>2</li>
+                <li class="on">3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>下一页 ></li>
+            </ul>
+             */
+
+            //  5.3 拼接分页条
+            var page = data.pageBean.page;
+            var pageNumber = data.pageBean.pageNumber;
+            var  pageUi = "<ul>"
+            // 添加首页
+
+            pageUi+= "<li onclick = 'ajaxQuery(1,12)'><a href='#'>首 页</a></li>";
+            //5.3.1: 拼接 上一页
+            if(page > 1){
+                pageUi+= "<li  onclick = 'ajaxQuery("+(page-1)+",12)' ><a href='#'>< 上一页</a></li>";
+            }
+
+            //5.3.2: 拼接  页码
+            //  5.3.2.1  如果总页数 小于等于 7 的, 展示 所有的页码
+            if(pageNumber <=7){
+                for(var i = 1 ; i <= pageNumber ; i++){
+
+                    if(page == i){
+                        pageUi+="<li class='on'>"+i+"</li>";
+                    }else{
+                        pageUi+="<li onclick = 'ajaxQuery("+i+",12)' >"+i+"</li>";
+                    }
+                }
+
+            }else {
+                // 5.3.2.2 : 如果总页数大于7页的,  当前页 在 1~4范围, 展示 !~7
+
+                if(page<=4){
+
+                    for(var i = 1 ; i <= 7 ; i++){
+
+                        if(page == i){
+                            pageUi+="<li class='on'>"+i+"</li>";
+                        }else{
+                            pageUi+="<li onclick = 'ajaxQuery("+i+",12)' >"+i+"</li>";
+                        }
+                    }
+                }
+
+                // 5.3.2.2 : 如果总页数大于7页的,  当前页 大于4并且小于总页数-2范围, 展示 当前页-3 ~ 当前页 +3
+                if(page>4 && page <(pageNumber-2)){
+
+                    for(var i = (page-3) ; i <= (page+3) ; i++){
+
+                        if(page == i){
+                            pageUi+="<li class='on'>"+i+"</li>";
+                        }else{
+                            pageUi+="<li onclick = 'ajaxQuery("+i+",12)' >"+i+"</li>";
+                        }
+                    }
+                }
+
+                // 5.3.2.3 : 如果总页数大于7页的,  当前页+3 大于总页数, 展示 总页数-7 ~ 总页数
+                if((page+3) > pageNumber){
+
+                    for(var i = (pageNumber-7) ; i <= pageNumber ; i++){
+
+                        if(page == i){
+                            pageUi+="<li class='on'>"+i+"</li>";
+                        }else{
+                            pageUi+="<li onclick = 'ajaxQuery("+i+",12)' >"+i+"</li>";
+                        }
+                    }
+                }
+            }
+
+
+            //5.3.3: 拼接 下一页
+            if(pageNumber > page){
+                pageUi+="<li onclick = 'ajaxQuery("+(page+1)+",12)' ><a href='#'>下一页 ></a> </li>"
+            }
+
+            // 添加尾页:
+            pageUi+= "<li onclick = 'ajaxQuery("+pageNumber+",12)'><a href='#'>尾 页</a></li>";
+
+            pageUi +="</ul>"
+
+            //5.4 将pageUi 设置到页面中
+            $(".pageList").html(pageUi)
+
+        }, "json");
+
+    }
+
+
+</script>
+</body>>
+
+</html>
