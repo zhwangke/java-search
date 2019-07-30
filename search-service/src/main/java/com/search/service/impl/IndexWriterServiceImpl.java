@@ -1,4 +1,4 @@
-package com.serach.service.impl;
+package com.search.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.gossip.pojo.News;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @Author: WK
  * @Data: 2019/7/22 20:33
- * @Description: com.serach.service.impl
+ * @Description: com.search.service.impl
  */
 
 @Service//dubbox

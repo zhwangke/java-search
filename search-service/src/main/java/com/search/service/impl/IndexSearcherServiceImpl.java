@@ -1,4 +1,4 @@
-package com.serach.service.impl;
+package com.search.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.gossip.pojo.News;
@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * @Author: WK
  * @Data: 2019/7/25 19:05
- * @Description: com.serach.service.impl
+ * @Description: com.search.service.impl
  */
 
 @Service
@@ -32,47 +32,75 @@ public class IndexSearcherServiceImpl implements IndexSearcherService{
 
     @Override
     public ResultBean findByPage(ResultBean resultBean) throws Exception {
-        //1封装查询的条件：solrQuery
-            //查询入口的条件 ---  根据关键词
+
+        //1. 封装查询的条件:  SolrQuery
+        //1.1 主入口的条件: 根据关键词查询
         SolrQuery solrQuery = new SolrQuery(resultBean.getKeywords());
-            //分页的条件
+        //1.2 分页的条件
         Integer page = resultBean.getPageBean().getPage();
         Integer pageSize = resultBean.getPageBean().getPageSize();
-            //从第几条数据开始查 eg:第1页从0条开始
+        //从第几条开始查
         solrQuery.setStart( (page -1)*pageSize );
-            //每页显示的数据
+        //每页显示多少
         solrQuery.setRows(pageSize);
 
-        //添加高亮的条件
-        solrQuery.setHighlight(true);
+        //1.3 添加高亮的条件
+        solrQuery.setHighlight(true); //开启高亮
         solrQuery.addHighlightField("title");
         solrQuery.addHighlightField("content");
-        solrQuery.setHighlightSimplePre("<font color='red'>");
+        solrQuery.setHighlightSimplePre("<font color = 'red'>");
         solrQuery.setHighlightSimplePost("</font>");
 
+        //1.4 添加搜索工具的条件 : 先判断, 后添加
+        //1.4.1: 时间范围查询
+        String dateStart = resultBean.getDateStart();
+        String dateEnd = resultBean.getDateEnd();
+        if(dateStart != null && !"".equals(dateStart) && dateEnd !=null && !"".equals(dateEnd)){
+            // 说明 dateStart  和 dateEnd 都有内容, 需要进行日期范围查询:  UTC
+            // 07/23/2019 15:13:29
+            SimpleDateFormat format1 = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+            SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+            Date oldDateStart = format1.parse(dateStart);
+            Date oldDateEnd = format1.parse(dateEnd);
+            String newDateStart = format2.format(oldDateStart);
+            String newDateEnd = format2.format(oldDateEnd);
+
+            solrQuery.addFilterQuery("time:[ "+newDateStart+" TO "+newDateEnd+" ]");
+        }
+        //1.4.2: 根据编辑查询
+        String editor = resultBean.getEditor();
+        if(editor != null && !"".equals(editor)){
+            solrQuery.addFilterQuery("editor:"+editor);
+        }
+        //1.4.3: 根据来源查询
+        String source = resultBean.getSource();
+        if(source != null && !"".equals(source)){
+            solrQuery.addFilterQuery("source:"+source);
+        }
 
 
-        //2执行操作
+
+        //2. 执行查询操作
         QueryResponse response = solrServer.query(solrQuery);
 
-        //3封装数据
+        //3. 封装数据 : pageBean
         PageBean pageBean = resultBean.getPageBean();
+        //3.1 封装每页的数据
+        //List<News> newsList = response.getBeans(News.class); // 封装不成功的, 因为有一个time字段是date, 但是pojo是string
+        SolrDocumentList documentList = response.getResults(); // 搜索结果数据
         Map<String, Map<String, List<String>>> highlighting = response.getHighlighting(); //高亮的结果内容
-            //封装每页的数据
-        // 封装不成功的, 因为有一个time字段是date, 但是pojo是string
-        //List<News> newsList = response.getBeans(News.class);
-        SolrDocumentList documentList = response.getResults();
+
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss" );
-        List<News> newsList = new ArrayList<News>();
+        List<News>  newsList = new ArrayList<>();
         for (SolrDocument document : documentList) {
             String id = (String) document.get("id");
             String title = (String)document.get("title");
             Date date = (Date) document.get("time");
-            String source =(String) document.get("source");
+            source =(String) document.get("source");
             String content =(String) document.get("content");
-            String editor = (String) document.get("editor");
+            editor = (String) document.get("editor");
             String docurl = (String) document.get("docurl");
-            //############高亮##################
+
             Map<String, List<String>> listMap = highlighting.get(id);
             List<String> list = listMap.get("title");
             if(list != null && list.size() > 0 ){
@@ -90,8 +118,6 @@ public class IndexSearcherServiceImpl implements IndexSearcherService{
                     content = content.substring(0,99)+"......";
                 }
             }
-            //############高亮##################
-
 
             News news = new News();
 
@@ -108,10 +134,10 @@ public class IndexSearcherServiceImpl implements IndexSearcherService{
 
 
             newsList.add(news);
-            newsList.add(news);
-
         }
+
         pageBean.setNewsList(newsList);
+
         //3.2 总条数封装
         Long pageCount = documentList.getNumFound();
 
