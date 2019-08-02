@@ -28,5 +28,5 @@
     <dubbo:protocol name="dubbo" port="20881"></dubbo:protocol>
     <dubbo:application name="search-service"/>
     <dubbo:registry protocol="zookeeper" address="192.168.72.141:2181,192.168.72.142:2181,192.168.72.143:2181"/>
-    <dubbo:annotation package="com.serach.service"/>
+    <dubbo:annotation package="com.search.service"/>
 </beans>
